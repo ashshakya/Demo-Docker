@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: ["sh", "/code/start.sh"]
+    volumes:
+      - .:/code
+      - /static/confession:/static/confession
+      - /home/ubuntu/mapping:/mapping
+    expose:
+      - "26000"
+    ports:
+      - "26000:26000"
+    restart: always
